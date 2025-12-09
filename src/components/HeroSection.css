@@ -1,0 +1,762 @@
+/* Import DM Sans and DM Serif Display fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background-color: #F8F8F9;
+}
+
+/* Top Banner */
+.top-banner {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(180deg, #1C3CD3 0%, #152C99 100%);
+  margin-bottom: -2.4rem;
+}
+
+.top-banner-text {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 18px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Main Content */
+.hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 340px 1fr;
+    /* slightly larger horizontal gap between the left image column and the right content */
+    gap: 3.2rem;
+    /* center the two-column grid inside the content area and center rows */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Header - Full Width */
+.hero-header-full {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: center;
+  margin-bottom: -1rem;
+}
+
+/* Left Column - Instructor Card */
+.hero-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructor-card-wrapper {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instructor-note {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  color: rgb(58, 58, 58);
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 1rem;
+  margin-left: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow: visible;
+}
+
+.instructor-image-container {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.instructor-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 325px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  /* Nudge the instructor image toward the right column so it sits closer
+     to the right-side content while keeping the right content in place. */
+  .instructor-image-container {
+    /* stronger nudge and slight overflow so the image visually sits closer
+       to the right-side content. Increase if you want more overlap. */
+    transform: translateX(120px);
+    margin-right: -170px;
+    z-index: 2;
+  }
+
+  /* Move only the note (below the image) with the image; keep the overlay
+     (name/stats/ratings) positioned as before so it stays attached to the
+     image container and remains unchanged. */
+  .instructor-note {
+    transform: translateX(200px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+  }
+}
+
+.instructor-info-overlay {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  background: transparent;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+.instructor-name {
+  font-size: 19px;
+  font-weight: 400;
+  color: rgb(17, 17, 17);
+  line-height: 26px;
+  margin-bottom: 0.3rem;
+  font-family: 'DM Serif Display', sans-serif;
+}
+
+.instructor-stats {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(71, 71, 71);
+  line-height: 16px;
+  margin-bottom: 0.25rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.instructor-rating {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(71, 71, 71);
+  line-height: 16px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Right Column - Content */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 0;
+  margin-top: -1.5rem;
+}
+
+/* center right column content so the two columns sit centered as a block */
+@media (min-width: 1024px) {
+  .hero-right {
+    align-items: center;
+  }
+}
+
+.hero-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.masterclass-badge {
+  color: rgb(25, 55, 194);
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.main-heading {
+  font-size: 40px;
+  line-height: 64px;
+  font-family: 'DM Serif Display', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .main-heading {
+    font-size: 49px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-heading {
+    font-size: 49px;
+  }
+}
+
+.heading-normal {
+  color: rgb(17, 17, 17);
+  font-weight: 400;
+  font-family: 'DM Serif Display', sans-serif;
+}
+
+.heading-blue {
+  color: #2542C9;
+  font-weight: 500;
+  font-family: 'DM Serif Display', sans-serif;
+  background: #314DCF;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.emoji-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+@media (min-width: 1024px) {
+  .emoji-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.subheading {
+  font-size: 21px;
+  color: rgba(17, 17, 17, 0.8);
+  line-height: 29px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: -1rem;
+}
+
+@media (min-width: 1024px) {
+  .subheading {
+    font-size: 21px;
+  }
+}
+
+.subheading-underline {
+  text-decoration: underline;
+  font-weight: 900;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Details Section */
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.details-heading {
+  font-size: 21px;
+  font-weight: 700;
+  color: #000000;
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+}
+
+.details-grid {
+  display: grid;
+  /* allow cards to grow while keeping two columns; min width ensures cards
+     become wider on larger screens instead of only increasing padding */
+  /* intermediate size: slightly larger than the smallest, slightly smaller than previous large */
+  grid-template-columns: repeat(2, minmax(210px, 1fr));
+  gap: 1.25rem;
+  max-width: 420px;
+  /* center detail cards inside right column when the whole section is centered */
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .details-grid {
+    /* intermediate tablet/desktop size */
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 1.25rem;     
+    max-width: 680px; 
+    margin: 0 auto;
+  }
+}
+
+.detail-card {
+  background: white;
+  border-radius: 18px;
+  padding: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: 100%;
+}
+
+.detail-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-icon svg {
+  width: 46px;
+  height: 46px;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  /* nudge the right column slightly to the right so it sits a bit farther from the image */
+  .hero-right {
+    padding-left: 20px;
+  }
+}
+
+.detail-label {
+  font-size: 16px;
+  color: rgb(17, 17, 17);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 4px;
+  line-height: 21px;
+}
+
+.detail-value {
+  font-size: 18px;
+  font-weight: 900;
+  color: rgb(17, 17, 17);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 24px;
+}
+
+/* CTA Button */
+.cta-container {
+  margin-top: 0rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+}
+
+.cta-button {
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(90deg, #FF9321 0%, #F4C619 100%);
+  color: rgb(17, 17, 17);
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 26px;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .cta-button {
+    max-width: 600px;
+  }
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 200%;
+  }
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #FF8A00 0%, #F0BB00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop-specific adjustments: restore larger left offsets and CTA padding */
+@media (min-width: 1024px) {
+  .details-section {
+    margin-left: 10rem;
+    margin-top: 2rem;
+  }
+
+  .cta-container {
+    margin-left: 10rem;
+    justify-content: flex-start;
+  }
+
+  .cta-button {
+    padding: 1rem 9rem;
+    max-width: 600px;
+  }
+}
+
+/* Mobile & small-tablet adjustments: make layout stack cleanly, move image last,
+   enlarge image to full width, and tighten headings/gaps for smaller screens */
+@media (max-width: 1023px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  /* Order: header first, details next, instructor image last */
+  .hero-header-full {
+    order: 1;
+    text-align: center;
+    margin-bottom: 1rem;
+    gap: 0.6rem;
+  }
+
+  .hero-right {
+    order: 2;
+    align-items: stretch;
+  }
+
+  .hero-left {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .main-heading {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .subheading {
+    font-size: 18px;
+    margin-bottom: -0.5rem;
+  }
+
+/* Stronger main-heading sizes for smaller screens to improve prominence */
+@media (max-width: 1023px) {
+  .main-heading {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-heading {
+    font-size: 30px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+/* User-requested stronger increase for main heading on small screens */
+@media (max-width: 1023px) {
+  .main-heading {
+    font-size: 42px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-heading {
+    font-size: 38px;
+    line-height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+
+  /* Make the instructor image wider on small screens and fill its container */
+  .instructor-card-wrapper {
+    width: 100%;
+    max-width: none;
+    padding: 0 1rem;
+  }
+
+  .instructor-image-container {
+    position: relative;
+    width: 100%;
+    display: block;
+    transform: none;
+    margin-right: 0;
+  }
+
+  .instructor-card-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Ensure the note sits centered beneath the image on small screens */
+  .instructor-note {
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 0.75rem auto 0;
+    padding: 0 1rem;
+  }
+
+  /* Make detail cards stack more naturally on narrow screens */
+  .details-grid {
+    /* Use two equal columns that fill the available width on small screens */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+    width: 100%;
+    max-width: none;
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+  .detail-card {
+    padding: 0.9rem;
+  }
+
+  /* CTA centering for small screens */
+  .cta-container {
+    margin-left: 0;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+}
+
+/* Force single-column details on very small screens to avoid 2x2 layout */
+@media (max-width: 767px) {
+  .hero-right .details-grid {
+    /* Keep two equal columns that use full width of the screen */
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 0.75rem;
+    margin: 0;
+  }
+}
+
+/* Smaller typography & icons for very small screens to keep cards readable */
+@media (max-width: 480px) {
+  .hero-right .details-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  .detail-card {
+    padding: 0.6rem;
+  }
+
+  .detail-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .detail-label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .detail-value {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+/* Medium-small screens: reduce detail card typography and header sizes */
+@media (max-width: 767px) {
+  .detail-card {
+    padding: 0.75rem;
+  }
+
+  .detail-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .detail-label {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .detail-value {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  /* Reduce header text sizes for smaller screens so headings don't dominate */
+  .masterclass-badge {
+    font-size: 14px;
+  }
+
+  .main-heading {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .subheading {
+    font-size: 15px;
+  }
+
+  /* Banner and heading tweaks for small screens */
+  @media (max-width: 767px) {
+    .top-banner-text {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    /* Slightly increase the subheading under the main heading on mobile for readability */
+    .subheading {
+      font-size: 17px;
+      line-height: 24px;
+    }
+
+    .subheading-underline {
+      font-size: 17px;
+    }
+
+    /* Make the 'Masterclass Details' heading a touch larger on small screens */
+    .details-heading {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .top-banner-text {
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    .subheading {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .subheading-underline {
+      font-size: 16px;
+    }
+
+    .details-heading {
+      font-size: 17px;
+    }
+  }
+
+  /* Instructor overlay spacing for small and very small screens
+     Increase `bottom` so the overlay sits higher above the image bottom edge
+     and increase padding for readability on small devices. */
+  @media (max-width: 1023px) {
+    .instructor-info-overlay {
+      bottom: 40px;
+      padding: 1rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .instructor-info-overlay {
+      bottom: 40px;
+      padding: 1.25rem 1rem;
+    }
+  }
+
+/* Final overrides: ensure main heading is larger on small screens
+   Use a slightly more specific selector and place at the end so it wins */
+@media (max-width: 1023px) {
+  .hero-content .main-heading {
+    font-size: 44px;
+    line-height: 56px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-content .main-heading {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content .main-heading {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+}
