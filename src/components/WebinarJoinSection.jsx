@@ -84,14 +84,14 @@ function WebinarJoinSection() {
         
         @media (max-width: 768px) {
           .heading-text {
-            font-size: 30px;
+            font-size: 33px;
             line-height: 40px;
           }
         }
         
         @media (max-width: 640px) {
           .heading-text {
-            font-size: 26px;
+            font-size: 32px;
             line-height: 34px;
           }
         }
@@ -193,7 +193,7 @@ function WebinarJoinSection() {
           </div>
 
           {/* Fist Emoji */}
-          <div className="text-center mb-6 md:mb-8">
+          <div className="text-center mb-4 md:mb-6">
             <img 
               src="/assets/icons/fist.png" 
               alt="Fist emoji" 

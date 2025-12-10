@@ -66,6 +66,7 @@ function FAQSection() {
         .faq-icon {
           width: 28px;
           height: 28px;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .faq-question {
@@ -76,6 +77,63 @@ function FAQSection() {
         .faq-answer {
           font-size: 19px;
           line-height: 24px;
+        }
+        
+        .faq-header-title {
+          font-size: 40px;
+          line-height: 50px;
+          font-weight: 700;
+        }
+        
+        .faq-question-icon {
+          width: 48px;
+          height: 48px;
+        }
+        
+        .faq-header-line {
+          width: 160px;
+          height: 4px;
+        }
+        
+        /* Smooth transition for answer container */
+        .faq-answer-wrapper {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          overflow: hidden;
+        }
+        
+        .faq-answer-wrapper.open {
+          grid-template-rows: 1fr;
+        }
+        
+        /* Inner content wrapper for smooth animation */
+        .faq-answer-inner {
+          overflow: hidden;
+        }
+        
+        /* Content animation - slides from bottom to top when opening */
+        .faq-answer-content {
+          padding-right: 3rem;
+          padding-bottom: 0;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .faq-answer-wrapper.open .faq-answer-content {
+          padding-bottom: 1rem;
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        /* Icon smooth rotation and background transition */
+        .faq-icon svg {
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .faq-icon.rotating svg {
+          transform: rotate(180deg);
         }
         
         @media (max-width: 768px) {
@@ -98,6 +156,26 @@ function FAQSection() {
             font-size: 16px !important;
             line-height: 21px !important;
           }
+          
+          .faq-answer-content {
+            padding-right: 1rem;
+          }
+          
+          /* Smaller header for mobile */
+          .faq-header-title {
+            font-size: 28px !important;
+            line-height: 36px !important;
+          }
+          
+          .faq-question-icon {
+            width: 32px !important;
+            height: 32px !important;
+          }
+          
+          .faq-header-line {
+            width: 120px !important;
+            height: 3px !important;
+          }
         }
       `}</style>
       
@@ -107,25 +185,23 @@ function FAQSection() {
           <div className="text-center mb-8 md:mb-10">
             <h2 className="flex items-center justify-center gap-2 mb-3 flex-wrap">
               <span 
-                className="font-['Playfair_Display'] font-bold text-[#304CCF]"
-                style={{ fontSize: '40px', lineHeight: '50px', fontWeight: '700' }}
+                className="font-['Playfair_Display'] font-bold text-[#304CCF] faq-header-title"
               >
                 Frequently
               </span>
               <span 
-                className="font-['Playfair_Display'] font-bold text-[rgb(0,0,0)]"
-                style={{ fontSize: '40px', lineHeight: '50px', fontWeight: '700' }}
+                className="font-['Playfair_Display'] font-bold text-[rgb(0,0,0)] faq-header-title"
               >
                 Asked Questions
               </span>
               <img 
                 src="/assets/icons/question.png" 
                 alt="Question mark" 
-                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                className="faq-question-icon object-contain"
               />
             </h2>
             
-            <div className="w-32 md:w-40 h-1 bg-[#1C3CD5] rounded-full mx-auto"></div>
+            <div className="faq-header-line bg-[#1C3CD5] rounded-full mx-auto"></div>
           </div>
 
           {/* FAQ Items */}
@@ -150,7 +226,7 @@ function FAQSection() {
                   {/* Toggle Icon */}
                   <div className={`flex-shrink-0 rounded-full flex items-center justify-center faq-icon ${
                     openItems.includes(index) 
-                      ? 'bg-black border-2 border-black' 
+                      ? 'bg-black border-2 border-black rotating' 
                       : 'border-2 border-[rgb(0,0,0)] bg-transparent'
                   }`}>
                     {openItems.includes(index) ? (
@@ -165,17 +241,21 @@ function FAQSection() {
                   </div>
                 </button>
                 
-                {/* Answer */}
-                {openItems.includes(index) && (
-                  <div className="pb-4 pr-12">
-                    <p 
-                      className="font-['DM_Sans'] text-[rgb(0,0,0)] faq-answer"
-                      style={{ fontWeight: '400' }}
-                    >
-                      {faq.answer}
-                    </p>
+                {/* Answer with smooth bottom-to-top transition */}
+                <div className={`faq-answer-wrapper ${
+                  openItems.includes(index) ? 'open' : ''
+                }`}>
+                  <div className="faq-answer-inner">
+                    <div className="faq-answer-content">
+                      <p 
+                        className="font-['DM_Sans'] text-[rgb(0,0,0)] faq-answer"
+                        style={{ fontWeight: '400' }}
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>

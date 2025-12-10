@@ -84,13 +84,13 @@ function LearnSection() {
           }
           
           .learn-heading-text {
-            font-size: 32px !important;
-            line-height: 40px !important;
+            font-size: 30px !important;
+            line-height: 38px !important;
           }
           
           .learn-heading-blue {
-            font-size: 32px !important;
-            line-height: 40px !important;
+            font-size: 30px !important;
+            line-height: 38px !important;
           }
           
           .learn-subheading {
@@ -99,13 +99,20 @@ function LearnSection() {
           }
           
           .learn-top-text {
-            font-size: 20px !important;
-            line-height: 28px !important;
+            font-size: 19px !important;
+            line-height: 27px !important;
           }
           
           .learn-note-text {
             font-size: 15px !important;
             line-height: 20px !important;
+          }
+          
+          .learn-check-icon {
+            transform: scale(0.95);
+            display: flex;
+            align-items: flex-start;
+            padding-top: 2px;
           }
         }
         
@@ -117,8 +124,8 @@ function LearnSection() {
         
         @media (max-width: 480px) {
           .learn-top-text {
-            font-size: 18px !important;
-            line-height: 25px !important;
+            font-size: 17px !important;
+            line-height: 24px !important;
             max-width: 320px !important;
           }
           
@@ -138,13 +145,13 @@ function LearnSection() {
           }
           
           .learn-heading-text {
-            font-size: 28px !important;
-            line-height: 36px !important;
+            font-size: 26px !important;
+            line-height: 34px !important;
           }
           
           .learn-heading-blue {
-            font-size: 28px !important;
-            line-height: 36px !important;
+            font-size: 26px !important;
+            line-height: 34px !important;
           }
           
           .learn-subheading {
@@ -169,6 +176,9 @@ function LearnSection() {
           
           .learn-check-icon {
             transform: scale(0.85);
+            display: flex;
+            align-items: flex-start;
+            padding-top: 2px;
           }
         }
       `}</style>
@@ -314,7 +324,7 @@ const styles = {
     height: '4px',
     background: '#1C3CD5',
     borderRadius: '2px',
-    marginBottom: '2rem'
+    marginBottom: '1.5rem'
   },
   subheading: {
     fontSize: '1.25rem',
@@ -335,7 +345,7 @@ const styles = {
   },
   card: {
     background: '#ffffff',
-    borderRadius: '16px',
+    borderRadius: '14px',
     padding: '0.7rem',
     boxShadow: '0 2px 12px rgba(0, 0, 0, 0.08)',
     display: 'flex',
@@ -346,6 +356,9 @@ const styles = {
   },
   checkmark: {
     flexShrink: 0,
+    display: 'flex',
+    alignItems: 'flex-start',
+    paddingTop: '2px'
   },
   cardContent: {
     flex: 1

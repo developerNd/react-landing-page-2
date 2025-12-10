@@ -1,4 +1,3 @@
-/* Import DM Sans and DM Serif Display fonts */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display:wght@400;500&display=swap');
 
 * {
@@ -18,7 +17,7 @@
   width: 100%;
   padding: 0.65rem 1rem;
   background: linear-gradient(180deg, #1C3CD3 0%, #152C99 100%);
-  margin-bottom: -2.4rem;
+  margin-bottom: -2.2rem;
 }
 
 .top-banner-text {
@@ -42,21 +41,6 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: start;
-}
-
-@media (min-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 340px 1fr;
-    /* slightly larger horizontal gap between the left image column and the right content */
-    gap: 3.2rem;
-    /* center the two-column grid inside the content area and center rows */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero-content {
-    padding: 4rem 2rem;
-  }
 }
 
 /* Header - Full Width */
@@ -113,29 +97,6 @@
   margin: 0 auto;
 }
 
-@media (min-width: 1024px) {
-  /* Nudge the instructor image toward the right column so it sits closer
-     to the right-side content while keeping the right content in place. */
-  .instructor-image-container {
-    /* stronger nudge and slight overflow so the image visually sits closer
-       to the right-side content. Increase if you want more overlap. */
-    transform: translateX(120px);
-    margin-right: -170px;
-    z-index: 2;
-  }
-
-  /* Move only the note (below the image) with the image; keep the overlay
-     (name/stats/ratings) positioned as before so it stays attached to the
-     image container and remains unchanged. */
-  .instructor-note {
-    transform: translateX(200px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 500px;
-  }
-}
-
 .instructor-info-overlay {
   position: absolute;
   bottom: 4px;
@@ -182,13 +143,6 @@
   margin-top: -1.5rem;
 }
 
-/* center right column content so the two columns sit centered as a block */
-@media (min-width: 1024px) {
-  .hero-right {
-    align-items: center;
-  }
-}
-
 .hero-header {
   display: flex;
   flex-direction: column;
@@ -203,22 +157,11 @@
   font-family: 'DM Sans', sans-serif;
 }
 
+/* MAIN HEADING - BASE SIZE (Desktop) */
 .main-heading {
-  font-size: 40px;
+  font-size: 49px;
   line-height: 64px;
   font-family: 'DM Serif Display', sans-serif;
-}
-
-@media (min-width: 768px) {
-  .main-heading {
-    font-size: 49px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-heading {
-    font-size: 49px;
-  }
 }
 
 .heading-normal {
@@ -245,13 +188,6 @@
   margin-left: 4px;
 }
 
-@media (min-width: 1024px) {
-  .emoji-icon {
-    width: 48px;
-    height: 48px;
-  }
-}
-
 .subheading {
   font-size: 21px;
   color: rgba(17, 17, 17, 0.8);
@@ -261,12 +197,6 @@
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: -1rem;
-}
-
-@media (min-width: 1024px) {
-  .subheading {
-    font-size: 21px;
-  }
 }
 
 .subheading-underline {
@@ -293,24 +223,10 @@
 
 .details-grid {
   display: grid;
-  /* allow cards to grow while keeping two columns; min width ensures cards
-     become wider on larger screens instead of only increasing padding */
-  /* intermediate size: slightly larger than the smallest, slightly smaller than previous large */
   grid-template-columns: repeat(2, minmax(210px, 1fr));
   gap: 1.25rem;
   max-width: 420px;
-  /* center detail cards inside right column when the whole section is centered */
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .details-grid {
-    /* intermediate tablet/desktop size */
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    gap: 1.25rem;     
-    max-width: 680px; 
-    margin: 0 auto;
-  }
 }
 
 .detail-card {
@@ -335,13 +251,6 @@
   width: 46px;
   height: 46px;
   display: block;
-}
-
-@media (min-width: 1024px) {
-  /* nudge the right column slightly to the right so it sits a bit farther from the image */
-  .hero-right {
-    padding-left: 20px;
-  }
 }
 
 .detail-label {
@@ -394,12 +303,6 @@
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .cta-button {
-    max-width: 600px;
-  }
-}
-
 .cta-button::before {
   content: '';
   position: absolute;
@@ -440,11 +343,53 @@
   z-index: 1;
 }
 
-/* Desktop-specific adjustments: restore larger left offsets and CTA padding */
+/* ==================== DESKTOP LAYOUT (1024px+) ==================== */
 @media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 340px 1fr;
+    gap: 3.2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-content {
+    padding: 4rem 2rem;
+  }
+
+  .instructor-image-container {
+    transform: translateX(120px);
+    margin-right: -170px;
+    z-index: 2;
+  }
+
+  .instructor-note {
+    transform: translateX(200px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+  }
+
+  .hero-right {
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .emoji-icon {
+    width: 48px;
+    height: 48px;
+  }
+
   .details-section {
     margin-left: 10rem;
     margin-top: 2rem;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 1.25rem;     
+    max-width: 680px; 
+    margin: 0 auto;
   }
 
   .cta-container {
@@ -458,8 +403,30 @@
   }
 }
 
-/* Mobile & small-tablet adjustments: make layout stack cleanly, move image last,
-   enlarge image to full width, and tighten headings/gaps for smaller screens */
+/* ==================== TABLET LAYOUT (768px - 1023px) ==================== */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .main-heading {
+    font-size: 42px;
+    line-height: 54px;
+  }
+
+  .subheading {
+    font-size: 19px;
+    line-height: 27px;
+  }
+
+  .masterclass-badge {
+    font-size: 16px;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 1.25rem;     
+    max-width: 680px; 
+  }
+}
+
+/* ==================== MOBILE & SMALL TABLET (below 1024px) ==================== */
 @media (max-width: 1023px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -467,7 +434,6 @@
     align-items: start;
   }
 
-  /* Order: header first, details next, instructor image last */
   .hero-header-full {
     order: 1;
     text-align: center;
@@ -488,61 +454,6 @@
     margin-top: 0.5rem;
   }
 
-  .main-heading {
-    font-size: 28px;
-    line-height: 40px;
-  }
-
-  .subheading {
-    font-size: 18px;
-    margin-bottom: -0.5rem;
-  }
-
-/* Stronger main-heading sizes for smaller screens to improve prominence */
-@media (max-width: 1023px) {
-  .main-heading {
-    font-size: 34px;
-    line-height: 48px;
-  }
-}
-
-@media (max-width: 767px) {
-  .main-heading {
-    font-size: 30px;
-    line-height: 44px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-heading {
-    font-size: 28px;
-    line-height: 40px;
-  }
-}
-
-/* User-requested stronger increase for main heading on small screens */
-@media (max-width: 1023px) {
-  .main-heading {
-    font-size: 42px;
-    line-height: 56px;
-  }
-}
-
-@media (max-width: 767px) {
-  .main-heading {
-    font-size: 38px;
-    line-height: 52px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-heading {
-    font-size: 34px;
-    line-height: 48px;
-  }
-}
-
-  /* Make the instructor image wider on small screens and fill its container */
   .instructor-card-wrapper {
     width: 100%;
     max-width: none;
@@ -565,7 +476,6 @@
     margin: 0 auto;
   }
 
-  /* Ensure the note sits centered beneath the image on small screens */
   .instructor-note {
     transform: none;
     width: 100%;
@@ -575,9 +485,12 @@
     padding: 0 1rem;
   }
 
-  /* Make detail cards stack more naturally on narrow screens */
+  .instructor-info-overlay {
+    bottom: 40px;
+    padding: 1rem 1rem;
+  }
+
   .details-grid {
-    /* Use two equal columns that fill the available width on small screens */
     grid-template-columns: repeat(2, 1fr);
     gap: 0.875rem;
     width: 100%;
@@ -590,7 +503,6 @@
     padding: 0.9rem;
   }
 
-  /* CTA centering for small screens */
   .cta-container {
     margin-left: 0;
     justify-content: center;
@@ -598,26 +510,91 @@
   }
 }
 
-/* Force single-column details on very small screens to avoid 2x2 layout */
+/* ==================== MEDIUM MOBILE (below 768px) ==================== */
 @media (max-width: 767px) {
-  .hero-right .details-grid {
-    /* Keep two equal columns that use full width of the screen */
-    grid-template-columns: repeat(2, 1fr) !important;
+  .main-heading {
+    font-size: 37px;
+    line-height: 48px;
+  }
+
+  .subheading {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .masterclass-badge {
+    font-size: 14px;
+  }
+
+  .details-heading {
+    font-size: 18px;
+  }
+
+  .top-banner-text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    max-width: none;
     padding: 0 0.75rem;
     margin: 0;
   }
+
+  .detail-card {
+    padding: 0.75rem;
+  }
+
+  .detail-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .detail-label {
+    font-size: 13px;
+    line-height: 17px;
+  }
+
+  .detail-value {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
-/* Smaller typography & icons for very small screens to keep cards readable */
+/* ==================== SMALL MOBILE (below 480px) ==================== */
 @media (max-width: 480px) {
-  .hero-right .details-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .main-heading {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .top-banner-text {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .details-heading {
+    font-size: 17px;
+  }
+
+  .instructor-info-overlay {
+    bottom: 40px;
+    padding: 1.25rem 1rem;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    max-width: none;
     padding: 0 0.5rem;
     margin: 0;
   }
@@ -632,131 +609,17 @@
   }
 
   .detail-label {
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .detail-value {
-    font-size: 14px;
-    line-height: 18px;
-  }
-}
-
-/* Medium-small screens: reduce detail card typography and header sizes */
-@media (max-width: 767px) {
-  .detail-card {
-    padding: 0.75rem;
-  }
-
-  .detail-icon svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .detail-label {
     font-size: 11px;
-    line-height: 14px;
+    line-height: 15px;
   }
 
   .detail-value {
     font-size: 13px;
-    line-height: 16px;
+    line-height: 18px;
   }
 
-  /* Reduce header text sizes for smaller screens so headings don't dominate */
-  .masterclass-badge {
-    font-size: 14px;
+  .emoji-icon {
+    width: 32px;
+    height: 32px;
   }
-
-  .main-heading {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  .subheading {
-    font-size: 15px;
-  }
-
-  /* Banner and heading tweaks for small screens */
-  @media (max-width: 767px) {
-    .top-banner-text {
-      font-size: 14px;
-      line-height: 18px;
-    }
-
-    /* Slightly increase the subheading under the main heading on mobile for readability */
-    .subheading {
-      font-size: 17px;
-      line-height: 24px;
-    }
-
-    .subheading-underline {
-      font-size: 17px;
-    }
-
-    /* Make the 'Masterclass Details' heading a touch larger on small screens */
-    .details-heading {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .top-banner-text {
-      font-size: 13px;
-      line-height: 16px;
-    }
-
-    .subheading {
-      font-size: 16px;
-      line-height: 22px;
-    }
-
-    .subheading-underline {
-      font-size: 16px;
-    }
-
-    .details-heading {
-      font-size: 17px;
-    }
-  }
-
-  /* Instructor overlay spacing for small and very small screens
-     Increase `bottom` so the overlay sits higher above the image bottom edge
-     and increase padding for readability on small devices. */
-  @media (max-width: 1023px) {
-    .instructor-info-overlay {
-      bottom: 40px;
-      padding: 1rem 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .instructor-info-overlay {
-      bottom: 40px;
-      padding: 1.25rem 1rem;
-    }
-  }
-
-/* Final overrides: ensure main heading is larger on small screens
-   Use a slightly more specific selector and place at the end so it wins */
-@media (max-width: 1023px) {
-  .hero-content .main-heading {
-    font-size: 44px;
-    line-height: 56px;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero-content .main-heading {
-    font-size: 40px;
-    line-height: 52px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content .main-heading {
-    font-size: 36px;
-    line-height: 48px;
-  }
-}
 }

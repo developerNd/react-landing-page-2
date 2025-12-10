@@ -106,7 +106,7 @@ function BonusResourcesSection() {
       <section className="bonus-section bg-white py-12 md:py-16 px-4 font-['DM_Sans']">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-10 md:mb-12">
+          <div className="text-center mb-8 md:mb-8">
             <h2 className="flex flex-col md:flex-row items-center justify-center gap-3 mb-4 px-4">
               {/* First line for mobile: "What do you get" */}
               <div className="flex items-center justify-center gap-3 flex-wrap">
